@@ -18,4 +18,5 @@ RSpec.feature "Admins can create new users" do
 		click_button "Create User"
 		expect(page).to have_content "User has been created."
 	end
+	sc
 end
