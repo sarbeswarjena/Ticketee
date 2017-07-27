@@ -14,5 +14,10 @@ class User < ApplicationRecord
   def to_s
   	"#{email} (#{admin? ? "Admin" : "User"})"
   end
-
+  def active_for_authentication?
+    super && archived_at.nil?
+  end
+  def inactive_message
+    archived_at.nil?  ? super : :archived
+  end
 end
